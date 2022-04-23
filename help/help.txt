@@ -1,2 +1,56 @@
 https://docs.docker.com/engine/install/debian/  - сылка на установку docker-а
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose --установка docker-compose
+
+нюансы при пользовании DOCKER
+
+    1) смотри кодировку должна быть LF (/n)
+    2) возможно возникнут проблемы с root-ом
+
+
+sudo apt install docker - установка docker
+sudo apt install docker-compose
+
+
+команды для создания пользователя
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+-----------------
+
+sudo systemctl status postgresql
+sudo systemctl stop postgresql
+sudo systemctl start postgresql
+
+
+docker ps - просмотр запущенных процесcов( должна работать без SUDO )
+docker ps -a  - просмотр остановленных процессов
+
+ctrl+c  - остановка docker-a
+docker images - просмотр всех образов
+docker-compose ps - просмотр запущенных процесcов
+docker-compose down - остановка/удаление docker-a
+
+docker images - команда для просмотра образов
+
+запуск:
+
+1) создаем папку production,
+2) в production закидываем наше приложение
+3) в production папке создаем файл docker-compose.yml с нужными настройками
+4) docker-compose up --build    - запуск/монтирование docker-a
+
+ADMINER в  docker-compose.yml - нужен для того чтоб проверить что все завелось(он необезателен)
+
+
+удаление образов Docker-а:
+
+
+docker rmi -f указываем_IMAGE_ID  - удаление вручную образа
+
+
+
+
+
+
+
+
