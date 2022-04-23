@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '(^gqh3$i0%)=(g2+02m!cyzew)tcmk9yttlkq%#itvkc@6m*_8'
 
-# DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -59,10 +59,9 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',  # for REACT CORS
 ]
 
-# CORS_ALLOWED_ORIGINS = [                      # for REACT CORS
-#     "http://127.0.0.1:3000",
-#     'http://localhost:3000'
-# ]
+CORS_ALLOWED_ORIGINS = [                      # for REACT CORS
+    "*"
+]
 
 ROOT_URLCONF = 'library.urls'
 
