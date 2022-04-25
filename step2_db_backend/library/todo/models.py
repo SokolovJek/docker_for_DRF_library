@@ -23,10 +23,10 @@ class TodoModel(models.Model):
     project = models.ForeignKey(ProjectModel, on_delete=models.CASCADE)
     todo_descriptions = models.TextField()
     users = models.ForeignKey(Users,
-                              on_delete=models.CASCADE
+                              on_delete=models.CASCADE,
                               # models.SET_NULL,
-                              # blank=True,
-                              # null=True
+                              blank=True,
+                              null=True
                               )
     is_active = models.CharField(max_length=20, choices=STATUS_CHOICES, default='active')
     date_create = models.DateTimeField(auto_now_add=True)
