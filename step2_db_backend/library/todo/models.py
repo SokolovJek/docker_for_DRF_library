@@ -5,7 +5,7 @@ from uuid import uuid4
 
 class ProjectModel(models.Model):
     project_name = models.CharField(max_length=100)
-    users = models.ManyToManyField(Users, related_name='all users for project')
+    users = models.ManyToManyField(Users, related_name='users_project')
     link_git = models.URLField()
     descriptions = models.TextField()
     date_create = models.DateTimeField(auto_now_add=True)
@@ -20,7 +20,7 @@ class TodoModel(models.Model):
         ('DONE', 'done'),
     )
 
-    project = models.ForeignKey(ProjectModel, on_delete=models.CASCADE, related_name='todo for project')
+    project = models.ForeignKey(ProjectModel, on_delete=models.CASCADE, related_name='todo_project')
     todo_descriptions = models.TextField()
     users = models.ForeignKey(Users,
                               on_delete=models.CASCADE,
