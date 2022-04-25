@@ -24,7 +24,7 @@ class TodoModel(models.Model):
     todo_descriptions = models.TextField()
     users = models.ForeignKey(Users,
                               on_delete=models.CASCADE,
-                              related_name='user_add_todo'
+                              related_name='user_add_todo',
                               # models.SET_NULL,
                               # blank=True,
                               # null=True
