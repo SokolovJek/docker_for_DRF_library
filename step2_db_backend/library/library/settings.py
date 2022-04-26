@@ -59,10 +59,10 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',  # for REACT CORS
 ]
 
-# CORS_ALLOWED_ORIGINS = [                      # for REACT CORS
-#     "http://127.0.0.1:3000",
-#     'http://localhost:3000'
-# ]
+CORS_ALLOWED_ORIGINS = [  # for REACT CORS
+    "http://192.168.0.25",
+    "http://localhost"
+]
 
 ROOT_URLCONF = 'library.urls'
 
