@@ -60,7 +60,9 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [  # for REACT CORS
+    "http://192.168.0.25:8000",
     "http://192.168.0.25",
+    "http://192.168.0.25:80",
     "http://localhost"
 ]
 

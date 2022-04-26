@@ -23,7 +23,13 @@ sudo systemctl start postgresql
 
 
 docker ps - просмотр запущенных процесcов( должна работать без SUDO )
+docker stop ID_image - остановка процесов
+
 docker ps -a  - просмотр остановленных процессов
+docker rm ID_image - удаление процессов с памяти
+
+
+
 
 ctrl+c  - остановка docker-a
 docker images - просмотр всех образов
