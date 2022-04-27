@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import axios from 'axios'
-import {HashRouter, Route, NavLink, Switch, Redirect} from 'react-router-dom'
+import {HashRouter,BrowserRouter, Route, NavLink, Switch, Redirect} from 'react-router-dom'
 import Cookies from 'universal-cookie'
 
 import ProjectsList from './components/Project.js'
@@ -205,7 +205,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className='container'>
-                <HashRouter>
+                <BrowserRouter>
 
                    <Header/>
                    <nav>
@@ -287,7 +287,7 @@ class App extends React.Component {
                         <Route component={page_not_found_404} />
 
                     </Switch>
-                </HashRouter>
+                </BrowserRouter>
 
                 <Footer/>
 			</div>
