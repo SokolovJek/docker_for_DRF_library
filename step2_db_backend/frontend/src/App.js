@@ -152,7 +152,6 @@ class App extends React.Component {
         {
             headers['Authorization'] = 'Token ' + this.state.token
         }
-        console.log(headers)
         return headers
     }
 
@@ -208,10 +207,34 @@ class App extends React.Component {
 			<div className='container'>
                 <HashRouter>
 
-                   <Header
-                        logout={this.logout}
-                        token={this.state.token}
-                   />
+                   <Header/>
+                   <nav>
+                        <ul>
+                            <li>
+                                <NavLink to='/'> список пользователей</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/projects'> проэкты </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/todos'> todo </NavLink>
+                            </li>
+                            <li>
+                                {this.is_authenticated() ? <button onClick={() => this.logout()}> logout </button> :
+                                    <NavLink to='/login'> login </NavLink>}
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div className='row'>
+                        <div className='col-12'>
+                            <h1 className='text-center text-white'>
+                                Всz информация
+                            </h1>
+                            <a href='http://127.0.0.1:8000/api/users/' className='btn itd_play text-uppercase'>Перейти</a>
+                        </div>
+
+                    </div>
 
                     <Switch>
                         <Route exact path='/' component={() => <AuthorList users={this.state.users} /> } />
